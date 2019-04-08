@@ -16,12 +16,6 @@ function as a volume image for your web server. You can also use them in a CI/CD
 system such as Gitlab CI to build your content prior to bundling it into a
 standalone webserver container such as `httpd:alpine`.
 
-#### Please Update to Hugo Version 0.48 and later
-
-Hugo 0.48 is built with the brand new Go 1.11. On the technical side this means
-that Hugo now uses Go Modules for the build. The big new functional thing in Go
-1.11 for Hugo is added support for variable overwrites.
-
 ### Prerequisites
 
 The image is based on the following directory structure:
