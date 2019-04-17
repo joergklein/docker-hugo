@@ -8,7 +8,7 @@ RUN apt-get -qq update \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install hugo
-ENV HUGO_VERSION 0.55.1
+ENV HUGO_VERSION 0.55.2
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
 
 RUN curl -sL -o /tmp/hugo.deb \
