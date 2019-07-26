@@ -2,13 +2,14 @@ FROM debian:stable
 
 LABEL Joerg Klein <kwp.klein@gmail.com>
 
-# Install pygments (for syntax highlighting)
-RUN apt-get -qq update \
-    && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments git ca-certificates asciidoc curl \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  git ca-certificates asciidoc curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/*
 
 # Download and install hugo
-ENV HUGO_VERSION 0.55.6
+ENV HUGO_VERSION 0.56.0
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
 
 RUN curl -sL -o /tmp/hugo.deb \
