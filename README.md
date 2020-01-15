@@ -1,15 +1,20 @@
-# A Docker Image of  the static site generator Hugo
+# A Docker Image for static web sites generated with Hugo.
 
 Hugo is a static HTML and CSS website generator written in [Golang][1]. It is
 optimized for speed, ease of use, and configurability. Hugo takes a directory
 with content and templates and renders them into a full HTML website.
-[joergklein/hugo][2] is a [Docker][3] base image for static site generated with
-[Hugo][4].
+[joergklein/hugo][2] is a [Docker][3] base image for static web sites generated
+with [Hugo][4].
+
+Built with love by [bep][5], [spf13][6] and [friends][7].
 
 [1]: https://golang.org
 [2]: https://hub.docker.com/r/joergklein/hugo
 [3]: https://docker.com
 [4]: https://gohugo.io
+[5]: https://github.com/bep
+[6]: http://spf13.com
+[7]: https://github.com/gohugoio/hugo/graphs/contributors
 
 Images derived from this image can either run as a stand-alone server, or
 function as a volume image for your web server. You can also use them in a CI/CD
@@ -73,4 +78,3 @@ The image is also suitable for use as a volume image for a web server, such as n
 docker run -d -v /usr/share/nginx/html --name site-data my/image
 docker run -d --volumes-from site-data --name site-server -p 80:80 nginx
 ```
-
