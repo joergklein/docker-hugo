@@ -49,7 +49,7 @@ The Repo is on https://github.com/joergklein/docker-hugo
 
 Based on this structure, you can easily build an image for your site:
 
-`docker build -t "my/image" .`
+`docker build -t hugo .`
 
 Your site is automatically generated during this build.
 
@@ -62,7 +62,7 @@ There are two options for using the image you generated:
 
 Using your image as a stand-alone image is the easiest:
 
-`docker run -p 1313:1313 my/image`
+`docker run -p 1313:1313 hugo`
 
 This will automatically `start hugo server`, and your blog is now available on
 
@@ -70,11 +70,11 @@ This will automatically `start hugo server`, and your blog is now available on
 
 If you are using boot2docker, you need to adjust the base URL:
 
-`docker run -p 1313:1313 -e HUGO_BASE_URL=http://YOUR_DOCKER_IP:1313 my/image`
+`docker run -p 1313:1313 -e HUGO_BASE_URL=http://YOUR_DOCKER_IP:1313 hugo`
 
 The image is also suitable for use as a volume image for a web server, such as nginx
 
 ```bash
-docker run -d -v /usr/share/nginx/html --name site-data my/image
+docker run -d -v /usr/share/nginx/html --name site-data hugo
 docker run -d --volumes-from site-data --name site-server -p 80:80 nginx
 ```
