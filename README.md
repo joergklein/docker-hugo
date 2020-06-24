@@ -41,7 +41,7 @@ The image is based on the following directory structure:
 In other words, your Hugo site resides in the site directory, and you have a
 simple Dockerfile:
 
-`FROM joklein/hugo`
+`FROM joergklein/hugo`
 
 ### Building your site
 
